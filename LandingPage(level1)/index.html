@@ -1,11 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page | Code Soft</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#home" class="logo">
+        <image src="./images/logo2.png" alt="logo" />
+        <h1>CodeMagic</h1>
+      </a>
+      <nav class="navigation">
+        <ul>
+          <li>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <div class="loginLinks">
+          <a href="">Login</a>
+          <a href="">Register</a>
+        </div>
+      </nav>
+      <div class="mobilenav-container">
+        <input type="checkbox" id="navToggle" />
+        <label for="navToggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="mobile-nav">
+          <div class="mobile-nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="divider"></div>
+          <div class="mobile-login-links">
+            <a href="">Login</a>
+            <a href="">Register</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="home">
+      <div class="home-container">
+        <div class="home-content">
+          <h1>Empowering Businesses & Nurturing Future Talent</h1>
+          <h2>
+            Crafting Innovative Software Solutions & Shaping Tomorrow’s Tech
+            Leaders
+          </h2>
+        </div>
+      </div>
+      <div class="home-subcontent">
+        <h2>
+          At CodeMagic, we transform ideas into reality with our top-tier web
+          and mobile app development services. We also offer hands-on
+          internships to equip students with real-world experience in tech.
+        </h2>
+        <div class="card-links">
+          <a href="#contact"> Get a solution</a>
+          <a href="#contact"> Apply for Internship</a>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <a
+          href="#about"
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+          "
+        >
+          See what we do
+          <img
+            style="filter: invert(100%)"
+            src="./images/icons/circle-arrow-down.png"
+            alt="arrow down"
+          />
+        </a>
+      </div>
+    </section>
+    <section id="about">About</section>
+    <section id="services">services</section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-container">
+        <img src="./images/logo.png" />
+        <div class="form-container">
+          <form>
+            <label>
+              <p>Enter Name</p>
+              <input placeholder="shubham mishra" type="text" />
+            </label>
+            <label>
+              <p>Enter Name</p>
+              <input placeholder="shubhammishra@gmail.com" type="email" />
+            </label>
+            <label>
+              <p>Enter message</p>
+              <textarea placeholder="Hi...."></textarea>
+            </label>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

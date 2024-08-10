@@ -1,0 +1,456 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+*::-webkit-scrollbar-track {
+  background-color: #3c4266;
+}
+*::-webkit-scrollbar-thumb {
+  background: #9dccff;
+  border-radius: 10px;
+  cursor: grab;
+}
+
+html,
+body {
+  background: #000000;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: #050020;
+  border-bottom: 1px solid #fff;
+  z-index: 50;
+}
+.header img {
+  height: 30px;
+}
+.header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+.logo h1 {
+  font-size: 1.5rem;
+}
+
+.navigation {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.navigation ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.navigation ul li a {
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #fff;
+  position: relative;
+}
+.navigation ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  bottom: -4px;
+  border-radius: 3px;
+  background-image: linear-gradient(to bottom right, #00bfff, #bf00ff);
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.navigation ul li a:hover::before {
+  transform: scale(1);
+}
+.navigation .loginLinks {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .loginLinks a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+.navigation .loginLinks a:nth-child(1) {
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 10px;
+}
+.navigation .loginLinks a:nth-child(2) {
+  border: 2px solid #fff;
+  padding: 5px;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+}
+
+#navToggle {
+  display: none;
+}
+.mobilenav-container {
+  display: flex;
+}
+
+.hamburger {
+  display: flex;
+  gap: 7px;
+  flex-direction: column;
+  height: fit-content;
+  width: min-content;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.hamburger:hover {
+  background: transparent;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.hamburger span {
+  background: #fff;
+  height: 2px;
+  width: 20px;
+  border-radius: 10px;
+  transform-origin: left center;
+  transition: 0.2s ease-in-out;
+}
+
+#navToggle:checked ~ .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, -1px);
+  bottom: 10px;
+}
+
+#navToggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+#navToggle:checked ~ .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(3px, 1px);
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 10px;
+  border: 1px solid #fff;
+  padding: 8px;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 5px;
+  width: 75%;
+}
+
+#navToggle:checked ~ .mobile-nav {
+  display: flex;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.mobile-nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px;
+  transition: 0.2s ease-in-out;
+  background: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.mobile-nav-links a:hover {
+  background: transparent;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.divider {
+  height: 1.5px;
+  width: 100%;
+  background: #ffffffb5;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.mobile-login-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.mobile-login-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px;
+}
+.mobile-login-links a:nth-child(1) {
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+.mobile-login-links a:nth-child(1):hover {
+  background: #fff;
+  color: #000;
+}
+.mobile-login-links a:nth-child(2) {
+  border: 2px solid #fff;
+  padding: 5px;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+}
+
+#home {
+  padding-top: 75px;
+  min-height: 100vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.home-container {
+  position: relative;
+  background-image: url("./images/homeImage.jpeg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  overflow: hidden;
+  display: flex;
+  height: 350px;
+}
+.home-content {
+  position: absolute;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.home-content h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bolder;
+}
+.home-content h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.home-subcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.home-subcontent h2 {
+  text-align: center;
+}
+.card-links {
+  display: flex;
+  gap: 10px;
+}
+.card-links a {
+  font-size: 1.2rem;
+  border: 1px solid #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.2s ease-in-out;
+  font-weight: bold;
+}
+.card-links a:hover {
+  background: #fff;
+  color: #000;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  padding-top: 75px;
+}
+#contact h2 {
+  font-size: 2.4rem;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-container img {
+  display: none;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+}
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border: 2px solid #d7dcfd;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
+#contact form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  gap: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#contact form label input {
+  font-size: 1rem;
+  padding: 8px 10px;
+  outline-color: #0008ff;
+  border-radius: 6px;
+  color: #fff;
+  border: 1px solid #fff;
+  background: transparent;
+  outline-offset: 3px;
+  font-weight: 600;
+}
+#contact form label input::placeholder {
+  color: #a1a1a1;
+}
+#contact form label textarea {
+  font-size: 1rem;
+  min-height: 200px;
+  padding: 8px 10px;
+  outline-color: #0008ff;
+  border-radius: 6px;
+  color: #fff;
+  border: 1px solid #fff;
+  background: transparent;
+  outline-offset: 3px;
+  font-weight: 600;
+}
+#contact form label textarea::placeholder {
+  color: #a1a1a1;
+}
+@media (min-width: 640px) {
+  .header img {
+    height: 40px;
+  }
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+  .header {
+    padding: 10px 30px;
+  }
+  /* .home-container{
+    height: 500px;
+  } */
+  .home-content h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: bolder;
+  }
+  .home-content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  #contact {
+    padding: 30px;
+    padding-top: 75px;
+  }
+  #contact h2 {
+    font-size: 3rem;
+  }
+  .contact-container img {
+    display: flex;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header img {
+    height: 50px;
+  }
+  .logo h1 {
+    font-size: 2rem;
+  }
+  .navigation {
+    display: flex;
+  }
+  .mobilenav-container {
+    display: none;
+  }
+  /* .home-container{
+    height: 400px;
+  } */
+  .contact-container img {
+    display: flex;
+    max-width: 400px;
+  }
+}
