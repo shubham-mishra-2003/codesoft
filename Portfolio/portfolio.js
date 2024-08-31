@@ -22,7 +22,7 @@ window.onscroll = () => {
 };
 
 //Typing animation
-const words = ["Student", "Web developer", "Computer Science Enthusiast"];
+const words = ["Student.", "Web Developer.", "Computer Science Enthusiast."];
 const typingSpeed = 200;
 const erasingSpeed = 100;
 const delayBetweenWords = 1500;
