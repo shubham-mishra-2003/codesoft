@@ -576,6 +576,21 @@ section {
   color: #a1a1a1;
 }
 
+#contact form button{
+  background: transparent;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+#contact form button:hover{
+  background: rgba(255, 255, 255, 0.2);
+}
+
 footer {
   display: flex;
   justify-content: center;
